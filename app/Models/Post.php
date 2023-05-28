@@ -16,6 +16,10 @@ class Post extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
+    public function tags() {
+        return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');
+    }
+
     public function getCreatedAtAttribute($date)
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $date)->diffForHumans();
