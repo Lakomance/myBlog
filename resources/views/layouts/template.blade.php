@@ -15,28 +15,22 @@
 <body>
     <header class="oleez-header">
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html"><img src="{{ asset("assets/images/Logo_2.svg") }}" alt="Oleez"></a>
+        <a class="navbar-brand" href="#"><img src="{{ asset("assets/images/Logo_2.svg") }}" alt="Oleez"></a>
         <ul class="nav nav-actions d-lg-none ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#!" data-toggle="searchModal">
+                <a class="nav-link" href="#" data-toggle="searchModal">
                     <img src="{{ asset("assets/images/search.svg") }}" alt="search">
                 </a>
             </li>
-            <li class="nav-item nav-item-cart">
-                <a class="nav-link" href="#!">
-                    <span class="cart-item-count">0</span>
-                    <img src="{{ asset("assets/images/shopping-cart.svg") }}" alt="cart">
-                </a>
-            </li>
             <li class="nav-item dropdown d-none d-sm-block">
-                <a class="nav-link dropdown-toggle" href="#!" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENG</a>
+                <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENG</a>
                 <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                    <a class="dropdown-item" href="#!">ARB</a>
-                    <a class="dropdown-item" href="#!">FRE</a>
+                    <a class="dropdown-item" href="#">ARB</a>
+                    <a class="dropdown-item" href="#">FRE</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#!" data-toggle="offCanvasMenu">
+                <a class="nav-link" href="#" data-toggle="offCanvasMenu">
                     <img src="{{ asset("assets/images/social icon@2x.svg") }}" alt="social-nav-toggle">
                 </a>
             </li>
@@ -47,57 +41,51 @@
         <div class="collapse navbar-collapse" id="oleezMainNav">
             <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#!" id="pagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                        <a class="dropdown-item" href="shop.html">Shop</a>
-                        <a class="dropdown-item" href="contact.html">Contact</a>
-                        <a class="dropdown-item" href="404.html">404</a>
+                        <a class="dropdown-item" href="#">Shop</a>
+                        <a class="dropdown-item" href="#">Contact</a>
+                        <a class="dropdown-item" href="#">404</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#!" id="portfolioDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
                     <div class="dropdown-menu" aria-labelledby="portfolioDropdown">
-                        <a class="dropdown-item" href="portfolio-list.html">Portfolio list</a>
-                        <a class="dropdown-item" href="portfolio.html">Portfolio grid</a>
-                        <a class="dropdown-item" href="portfolio-masonry.html">Portfolio masonry</a>
+                        <a class="dropdown-item" href="#">Portfolio list</a>
+                        <a class="dropdown-item" href="#">Portfolio grid</a>
+                        <a class="dropdown-item" href="#">Portfolio masonry</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#!" id="blogDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
                     <div class="dropdown-menu" aria-labelledby="blogDropdown">
-                        <a class="dropdown-item" href="blog-standard.html">Blog Standard</a>
-                        <a class="dropdown-item" href="blog-grid.html">Blog grid</a>
-                        <a class="dropdown-item" href="blog-single.html">Blog Post</a>
+                        <a class="dropdown-item" href="#">Blog Standard</a>
+                        <a class="dropdown-item" href="#">Blog grid</a>
+                        <a class="dropdown-item" href="#">Blog Post</a>
                     </div>
                 </li>
             </ul>
             <ul class="navbar-nav d-none d-lg-flex">
                 <li class="nav-item active">
-                    <a class="nav-link nav-link-btn" href="#!" data-toggle="searchModal">
+                    <a class="nav-link nav-link-btn" href="#" data-toggle="searchModal">
                         <img src="{{ asset("assets/images/search.svg") }}" alt="search">
                     </a>
                 </li>
-                <li class="nav-item nav-item-cart">
-                    <a class="nav-link nav-link-btn" href="#!">
-                        <span class="cart-item-count">0</span>
-                        <img src="{{ asset("assets/images/shopping-cart.svg") }}" alt="cart">
-                    </a>
-                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle " href="#!" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENG</a>
+                    <a class="nav-link dropdown-toggle " href="#" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ENG</a>
                     <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                        <a class="dropdown-item" href="#!">ARB</a>
-                        <a class="dropdown-item" href="#!">FRE</a>
+                        <a class="dropdown-item" href="#">ARB</a>
+                        <a class="dropdown-item" href="#">FRE</a>
                     </div>
                 </li>
                 <li class="nav-item ml-5">
-                    <a class="nav-link pr-0 nav-link-btn" href="#!" data-toggle="offCanvasMenu">
+                    <a class="nav-link pr-0 nav-link-btn" href="#" data-toggle="offCanvasMenu">
                         <img src="{{ asset("assets/images/social icon@2x.svg") }}" alt="social-nav-toggle">
                     </a>
                 </li>
@@ -114,10 +102,10 @@
                         <img src="{{ asset('assets/images/Logo_1.svg') }}" alt="oleez" class="footer-logo">
                         <p class="footer-intro-text">Don't be shy, get in touch with us and create the world again!</p>
                         <nav class="footer-social-links">
-                            <a href="#!">Fb</a>
-                            <a href="#!">Tw</a>
-                            <a href="#!">In</a>
-                            <a href="#!">Be</a>
+                            <a href="#">Fb</a>
+                            <a href="#">Tw</a>
+                            <a href="#">In</a>
+                            <a href="#">Be</a>
                         </nav>
                     </div>
                     <div class="col-md-6">
@@ -154,19 +142,19 @@
         </button>
         <ul class="oleez-social-menu">
             <li>
-                <a href="#!" class="oleez-social-menu-link">Facebook</a>
+                <a href="#" class="oleez-social-menu-link">Facebook</a>
             </li>
             <li>
-                <a href="#!" class="oleez-social-menu-link">Instagram</a>
+                <a href="#" class="oleez-social-menu-link">Instagram</a>
             </li>
             <li>
-                <a href="#!" class="oleez-social-menu-link">Behance</a>
+                <a href="#" class="oleez-social-menu-link">Behance</a>
             </li>
             <li>
-                <a href="#!" class="oleez-social-menu-link">Dribbble</a>
+                <a href="#" class="oleez-social-menu-link">Dribbble</a>
             </li>
             <li>
-                <a href="#!" class="oleez-social-menu-link">Email</a>
+                <a href="#" class="oleez-social-menu-link">Email</a>
             </li>
         </ul>
     </nav>
@@ -175,15 +163,15 @@
         <button type="button" class="close" aria-label="Close" data-dismiss="searchModal">
             <span aria-hidden="true">&times;</span>
         </button>
-        <form action="index.html" method="get" class="oleez-overlay-search-form">
+        <form action="#" method="get" class="oleez-overlay-search-form">
             <label for="search" class="sr-only">Search</label>
             <input type="search" class="oleez-overlay-search-input" id="search" name="search" placeholder="Search here">
         </form>
     </div>
     <script src="{{ asset('assets/vendors/popper.js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/wowjs/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}></script>
-        <script src="{{ asset('assets/vendors/slick-carousel/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/slick-carousel/slick.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script>
         new WOW().init();
