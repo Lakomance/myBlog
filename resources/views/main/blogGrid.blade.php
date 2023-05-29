@@ -20,11 +20,12 @@
             <div class="row">
                 <div class="col-12 pb-5 mb-5">
                         <nav class="oleez-pagination d-flex align-items-center justify-content-center wow fadeInUp">
-                            <a href="#" class="active">01</a>
-                            <a href="#">02</a>
-                            <a href="#">03</a>
-                            <a href="#" class="next">&rarr;</a>
+{{--                            <a href="#" class="active">01</a>--}}
+{{--                            <a href="#">02</a>--}}
+{{--                            <a href="#">03</a>--}}
+{{--                            <a href="#" class="next">&rarr;</a>--}}
                         </nav>
+                    {{ $posts->links() }}
                 </div>
             </div>
         </div>

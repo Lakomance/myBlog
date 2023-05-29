@@ -11,8 +11,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $post = Post::find(1);
-        $posts = Post::all();
+        $posts = Post::paginate(10);
         return view('main.blogGrid', compact('posts'));
     }
 }
