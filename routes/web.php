@@ -20,3 +20,18 @@ Route::group(['namespace' => '\App\Http\Controllers\Main', 'prefix' => 'posts'],
 Route::group(['namespace' => '\App\Http\Controllers\Post', 'prefix' => 'post'], function () {
    Route::get('/{post}', 'ShowController')->name('post.show');
 });
+
+Route::group(['prefix' => 'auth', 'middleware' => 'guest'], function () {
+    Route::get('/login', function () { return view('auth.login'); } )->name('auth.show.login');
+    Route::get('/register', function () { return view('auth.register'); } )->name('auth.show.register');
+});
+
+Route::group(['namespace' => '\App\Http\Controllers\Profile', 'prefix' => 'profile', 'middleware' => 'auth'], function () {
+    Route::get('/', 'IndexController')->name('profile.index');
+});
+
+Route::group(['namespace' => '\App\Http\Controllers\Auth', 'prefix' => 'auth'], function () {
+    Route::post('/login', 'LoginController')->name('auth.login');
+    Route::post('/register', 'RegisterController')->name('auth.register');
+    Route::post('/logout', 'LogoutController')->name('auth.logout');
+});
