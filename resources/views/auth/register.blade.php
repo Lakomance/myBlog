@@ -1,122 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Login V1</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}">
-    <!--===============================================================================================-->
-</head>
-<body>
+@extends('layouts.template')
+@section('main')
+    <div class="container mb-5">
+        <div class="row ml-5">
+            <div class="col ml-5">
+                <form action="{{ route('auth.register') }}" method="POST">
+                    @csrf
 
-<div class="limiter font-weight-bolder">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <div class="login100-pic js-tilt" data-tilt>
-                <img src="{{ asset('assets/images/Auth/auth.png') }}" alt="IMG">
+                    <div class="w-50 mb-3">
+                        <label for="name" class="form-label">Имя</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Имя..." required>
+                        @error('name')
+                        <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="w-50 mb-3">
+                        <label for="email" class="form-label">Email (Логин) </label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email..." required>
+                        @error('email')
+                        <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="w-50 mb-3">
+                        <label for="password" class="form-label">Пароль</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Пароль..." required>
+                        @error('password')
+                        <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="w-50 mb-3">
+                        <label for="password" class="form-label">Подтвердите пароль</label>
+                        <input type="password" class="form-control" id="password" name="password_confirmation" placeholder="Подтвердите пароль..." required>
+                        @error('password_confirmation')
+                        <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-info">Регистрация</button>
+                </form>
             </div>
-            <form class="login100-form validate-form" action="{{ route('auth.register') }}" method="POST">
-                @csrf
-					<span class="login100-form-title">
-						Регистрация
-					</span>
 
-                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="name" placeholder="Ваше имя...">
-                    <span class="focus-input100"></span>
-                </div>
-                @error('name')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Ваш email...">
-                    <span class="focus-input100"></span>
-{{--                    <span class="symbol-input100">--}}
-{{--							<i class="fa fa-envelope" aria-hidden="true"></i>--}}
-{{--						</span>--}}
-                </div>
-                @error('email')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="password" placeholder="Ваш пароль...">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-                </div>
-                @error('password')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <div class="wrap-input100 validate-input" data-validate = "Password is required">
-                    <input class="input100" type="password" name="password_confirmation" placeholder="Подтвердите пароль...">
-                    <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-                </div>
-                @error('password_confirmation')
-                <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
-                        Регистрация
-                    </button>
-                </div>
-
-{{--                <div class="text-center p-t-12">--}}
-{{--						<span class="txt1">--}}
-{{--							Забыли--}}
-{{--						</span>--}}
-{{--                    <a class="txt2" href="#">--}}
-{{--                        Логин / Пароль?--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-
-                                <div class="text-center p-t-12">
-                						<span class="txt1">
-                							Уже есть аккаунт?
-                						</span>
-                                    <a class="txt2" href="{{ route('auth.show.login') }}">
-                                        Войти
-                                    </a>
-                                </div>
-            </form>
+            <div class="col">
+                <img src="{{ asset('assets/images/Auth/auth.png') }}" alt="IMG" class="w-75">
+            </div>
         </div>
     </div>
-</div>
-
-
-
-
-<!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/tilt/tilt.jquery.min.js"></script>
-<script >
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
-</script>
-<!--===============================================================================================-->
-<script src="js/main.js"></script>
-
-</body>
-</html>
+@endsection

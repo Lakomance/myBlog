@@ -7269,7 +7269,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .off-canvas-menu {
   position: fixed;
-  background-color: #000000;
+  background-color: snow;
   width: 390px;
   max-width: 100%;
   top: 0;
@@ -7289,7 +7289,7 @@ a.text-dark:hover, a.text-dark:focus {
     right: 34px;
     border: 0;
     background-color: transparent;
-    color: #ffffff;
+    color: black;
     opacity: 1;
     font-size: 30px; }
     .off-canvas-menu .close:not(:disabled):not(.disabled):hover, .off-canvas-menu .close:not(:disabled):not(.disabled):focus {
