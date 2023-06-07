@@ -21,7 +21,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-outline-info">Войти</button>
+                <button type="submit" class="btn btn-outline-primary">Войти</button>
             </form>
         </div>
 
