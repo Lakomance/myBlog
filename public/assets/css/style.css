@@ -8393,3 +8393,12 @@ a.text-dark:hover, a.text-dark:focus {
       content: none; }
 
 /*# sourceMappingURL=style.css.map */
+
+input::file-selector-button {
+    font-weight: bold;
+    color: dodgerblue;
+    padding: 0.5em;
+    border: none;
+    background: none;
+}
+

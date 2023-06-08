@@ -21,6 +21,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="e-profile">
+                                    <form class="form" action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+
                                     <div class="row">
                                         <div class="col-12 col-sm-auto mb-3">
                                             <div class="mx-auto" style="width: 140px;">
@@ -34,14 +37,14 @@
                                                 <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{ $user->name }}</h4>
                                                 <p class="mb-0 text-muted">{{ $user->email }}</p>
                                                 <div class="mt-2">
-                                                    <input class="btn btn-outline-info" type="file">
-                                                        <i class="fa fa-fw fa-camera"></i>
-                                                    <button type="button" class="mt-2 btn btn-info">Изменить</button>
-                                                    </input>
+                                                    <input class="" type="file" name="picture">
+                                                    <i class="fa fa-fw fa-camera"></i>
                                                 </div>
+                                                @error('picture')
+                                                    <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                             <div class="text-center text-sm-right">
-                                                <span class="badge badge-secondary">administrator</span>
                                                 <div class="text-muted"><small>Joined {{ $user->created_at->format('d M Y') }}</small></div>
                                             </div>
                                         </div>
@@ -51,7 +54,6 @@
                                     </ul>
                                     <div class="tab-content pt-3">
                                         <div class="tab-pane active">
-                                            <form class="form" novalidate="">
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="row">
@@ -59,12 +61,18 @@
                                                                 <div class="form-group">
                                                                     <label>Полное имя</label>
                                                                     <input class="form-control" type="text" name="name" placeholder="John Smith" value="{{ $user->name }}">
+                                                                    @error('name')
+                                                                        <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Город</label>
-                                                                    <input class="form-control" type="text" name="username" placeholder="johnny.s" value="{{ $user->city }}">
+                                                                    <input class="form-control" type="text" name="city" value="{{ $user->city }}">
+                                                                    @error('city')
+                                                                    <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -72,20 +80,27 @@
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Email</label>
-                                                                    <input class="form-control" type="text" placeholder="user@example.com" value="{{ $user->email }}">
+                                                                    <input class="form-control" type="text" placeholder="user@example.com" name="email" value="{{ $user->email }}">
+                                                                    @error('email')
+                                                                    <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col mb-3">
                                                                 <div class="form-group">
-                                                                    <label>About</label>
-                                                                    <textarea class="form-control" rows="5">{{ $user->about_me }}</textarea>
+                                                                    <label>Обо мне</label>
+                                                                    <textarea class="form-control" name="about_me" rows="5">{{ $user->about_me }}</textarea>
+                                                                    @error('about_me')
+                                                                    <div class="mt-3 alert alert-danger">{{ $message }}</div>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <hr>
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6 mb-3">
                                                         <div class="mb-2"><b>Сменить пароль</b></div>
@@ -93,23 +108,33 @@
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Текущий пароль</label>
-                                                                    <input class="form-control" type="password">
+                                                                    <input class="form-control" type="password" name="password">
                                                                 </div>
+                                                                @error('password')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Новый пароль</label>
-                                                                    <input class="form-control" type="password">
+                                                                    <input class="form-control" type="password" name="new_password">
                                                                 </div>
+                                                                @error('new_password')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col">
                                                                 <div class="form-group">
                                                                     <label>Повторите <span class="d-none d-xl-inline">Пароль</span></label>
-                                                                    <input class="form-control" type="password"></div>
+                                                                    <input class="form-control" type="password" name="new_password_confirmation">
+                                                                </div>
+                                                                @error('new_password_confirmation')
+                                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                     </div>
@@ -119,10 +144,10 @@
                                                         <button class="btn btn-info" type="submit">Сохранить изменения</button>
                                                     </div>
                                                 </div>
-                                            </form>
 
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -132,10 +157,13 @@
                         <div class="card mb-3">
                             <div class="card-body">
                                 <div class="px-xl-3">
-                                    <button class="btn btn-block btn-secondary">
-                                        <i class="fa fa-sign-out"></i>
-                                        <span>Выйти</span>
-                                    </button>
+                                    <form action="{{ route('auth.logout') }}" method="post">
+                                        @csrf
+                                        <button class="btn btn-block btn-secondary">
+                                            <i class="fa fa-sign-out"></i>
+                                            <span>Выйти</span>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

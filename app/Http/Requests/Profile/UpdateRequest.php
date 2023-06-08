@@ -23,6 +23,12 @@ class UpdateRequest extends FormRequest
     {
         return [
             'picture' => 'image',
+            'name' => 'required|string',
+            'city' => '',
+            'email' => 'required|email',
+            'about_me' => '',
+            'password' => 'sometimes|nullable|required_with:new_password|current_password',
+            'new_password' => 'sometimes|nullable|required_with:password|confirmed|min:8',
         ];
     }
 }
