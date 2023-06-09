@@ -8,6 +8,8 @@
     <title>Oleez :: Blog Grid</title>
     <link rel="stylesheet" href="{{ asset("assets/vendors/animate.css/animate.min.css") }}">
     <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/vendors/summernote/summernote-bs4.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("assets/vendors/select2/css/select2.min.css") }}">
     <script src="{{ asset("assets/vendors/jquery/jquery.min.js") }}"></script>
     <script src="{{ asset("assets/js/loader.js") }}"></script>
 </head>
@@ -46,7 +48,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ auth("web")->user()->name }}</a>
                         <div class="dropdown-menu" aria-labelledby="blogDropdown">
                             <a class="dropdown-item" href="{{ route('profile.index') }}">Профиль</a>
-                            <a class="dropdown-item" href="#">Написать пост</a>
+                            <a class="dropdown-item" href="{{ route('post.create') }}">Написать пост</a>
                             <form action="{{ route('auth.logout') }}" method="POST">
                                 @csrf
 {{--                                <a class="dropdown-item" href="">Выйти</a>--}}
@@ -150,8 +152,19 @@
     <script src="{{ asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/slick-carousel/slick.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ asset('assets/vendors/summernote/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/select2/js/select2.min.js') }}"></script>
     <script>
         new WOW().init();
+        $('#summernote').summernote({ height: 300, placeholder: 'Что у вас нового?' });
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2({
+            });
+        });
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2({
+            });
+        });
     </script>
 </body>
 </html>
