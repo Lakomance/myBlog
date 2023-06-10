@@ -18,8 +18,8 @@ Route::group(['namespace' => '\App\Http\Controllers\Main', 'prefix' => 'posts'],
 });
 
 Route::group(['namespace' => '\App\Http\Controllers\Post', 'prefix' => 'post'], function () {
-    Route::get('/create', 'CreateController')->name('post.create');
-    Route::post('/store', 'StoreController')->name('post.store');
+    Route::get('/create', 'CreateController')->name('post.create')->middleware('auth');
+    Route::post('/store', 'StoreController')->name('post.store')->middleware('auth');
     Route::get('/{post}', 'ShowController')->name('post.show');
 });
 

@@ -9,7 +9,7 @@
                         <p class="post-date">{{ $post->updated_at }}</p>
                     </div>
                     <div class="post-content wow fadeInUp">
-                        {{ $post->content }}
+                        {!! $post->content !!}
                     </div>
                     <div class="post-tags wow fadeInUp">
                         @foreach($post->tags as $postTag)
@@ -52,9 +52,7 @@
                             <div class="gallery">
                                 @foreach($posts as $eachPost)
                                     @if($eachPost->category->title == $post->category->title && $eachPost->id != $post->id)
-                                        <a href="{{ route('post.show', $eachPost->id) }}" class="gallery-grid-item" data-fancybox="widget-gallery">
-                                            <img src="{{ Storage::url($eachPost->preview_image) }}" alt="gallery item">
-                                        </a>
+                                        <a href="{{ route('post.show', $eachPost->id) }}" class="gallery-grid-item" data-fancybox="widget-gallery"></a>
                                     @endif
                                 @endforeach
                             </div>
