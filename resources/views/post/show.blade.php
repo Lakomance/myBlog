@@ -18,6 +18,7 @@
                     </div>
                     <div class="post-navigation wow fadeInUp">
                         <button class="btn prev-post"> Предыдущий пост </button>
+                            <a class="btn" href="{{ route('post.edit', $post->id) }}"> Редактировать пост </a>
                         <button class="btn next-post"> Следующий пост </button>
                     </div>
                     <div class="comment-section wow fadeInUp">

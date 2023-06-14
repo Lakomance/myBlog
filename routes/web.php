@@ -18,8 +18,14 @@ Route::group(['namespace' => '\App\Http\Controllers\Main', 'prefix' => 'posts'],
 });
 
 Route::group(['namespace' => '\App\Http\Controllers\Post', 'prefix' => 'post'], function () {
-    Route::get('/create', 'CreateController')->name('post.create')->middleware('auth');
-    Route::post('/store', 'StoreController')->name('post.store')->middleware('auth');
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/create', 'CreateController')->name('post.create');
+        Route::post('/store', 'StoreController')->name('post.store');
+        Route::get('/{post}/edit', 'EditController')->name('post.edit');
+        Route::patch('{post}', 'UpdateController')->name('post.update');
+        Route::delete('{post}', 'DestroyController')->name('post.destroy');
+
+    });
     Route::get('/{post}', 'ShowController')->name('post.show');
 });
 
