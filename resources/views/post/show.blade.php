@@ -71,6 +71,35 @@
                     </div>
                 </div>
             </div>
+            <div class="row mb-5">
+                <section style="width: 100%">
+                    <h4 class="mb-4">Комментарии</h4>
+                    <div class="row d-flex justify-content-center">
+                        <div class="card text-dark" style="width: 100%">
+                            @foreach($post->comments as $postComment)
+                                <div class="card-body p-4">
+                                    <br>
+                                    <div class="d-flex flex-start">
+                                        <img class="rounded-circle shadow-1-strong me-3 mr-3"
+                                             src="{{ $postComment->user->picture ? Storage::url($postComment->user->picture) : asset('assets/images/Profile/default.png') }}" alt="avatar" width="60"
+                                             height="60" />
+                                        <div>
+                                            <h6 class="fw-bold mb-1">{{ $postComment->user->name }}</h6>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <p class="mb-0"> {{ $postComment->updated_at }} </p>
+                                                <a href="#" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
+                                                <a href="#" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
+                                                <a href="#" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
+                                            </div>
+                                            <p class="mb-0"> {{ $postComment->message }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
 @endsection
