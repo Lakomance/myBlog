@@ -23,7 +23,8 @@
                     </div>
                     <div class="comment-section wow fadeInUp">
                         <h5 class="section-title">Оставьте комментарий</h5>
-                        <form method="POST" class="oleez-comment-form">
+                        <form method="POST" action="{{ route('post.sendComment', $post->id) }}" class="oleez-comment-form">
+                            @csrf
                             <div class="row">
                                 <div class="form-group col-12">
                                     <label for="message">*Сообщение</label>
@@ -84,12 +85,15 @@
                                              src="{{ $postComment->user->picture ? Storage::url($postComment->user->picture) : asset('assets/images/Profile/default.png') }}" alt="avatar" width="60"
                                              height="60" />
                                         <div>
-                                            <h6 class="fw-bold mb-1">{{ $postComment->user->name }}</h6>
+                                            <h6 class="fw-bold mb-1">{{ $postComment->user->name }} </h6>
                                             <div class="d-flex align-items-center mb-3">
                                                 <p class="mb-0"> {{ $postComment->updated_at }} </p>
-                                                <a href="#" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a>
-                                                <a href="#" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
-                                                <a href="#" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
+{{--                                                @if($postComment->user->id == auth("web")->user()->id)--}}
+{{--                                                    <p class="mb-0 ml-2">--}}
+{{--                                                        <button class="btn btn-primary badge">Изменить</button>--}}
+{{--                                                        <button class="btn btn-danger badge">Удалить</button>--}}
+{{--                                                    </p>--}}
+{{--                                                @endif--}}
                                             </div>
                                             <p class="mb-0"> {{ $postComment->message }}</p>
                                         </div>
