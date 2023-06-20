@@ -21,7 +21,8 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-outline-primary">Войти</button>
+                <button type="submit" class="btn btn-outline-primary mr-3">Войти</button> <br> <br>
+                <span class="text-muted mr-1">Нет аккаунта?</span> <a href="{{ route('auth.register') }}" class="btn btn-outline-info">Зарегистрироваться</a>
             </form>
         </div>
 

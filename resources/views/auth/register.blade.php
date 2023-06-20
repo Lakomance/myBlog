@@ -38,7 +38,8 @@
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn btn-outline-primary">Регистрация</button>
+                    <button type="submit" class="btn btn-outline-primary">Регистрация</button> <br> <br>
+                    <span class="text-muted mr-1">Уже есть аккаунт?</span> <a href="{{ route('auth.login') }}" class="btn btn-outline-info">Логин</a>
                 </form>
             </div>
 
