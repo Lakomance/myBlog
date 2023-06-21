@@ -17,6 +17,14 @@ Route::group(['namespace' => '\App\Http\Controllers\Main', 'prefix' => 'posts'],
     Route::get('/', 'IndexController')->name('main.index');
 });
 
+Route::group(['namespace' => '\App\Http\Controllers\Post\Category', 'prefix' => 'posts'], function () {
+   Route::get('/category/{category}', 'IndexController')->name('posts.category');
+});
+
+Route::group(['namespace' => '\App\Http\Controllers\Post\Tag', 'prefix' => 'posts'], function () {
+    Route::get('/tag/{tag}', 'IndexController')->name('posts.tag');
+});
+
 Route::group(['namespace' => '\App\Http\Controllers\Post', 'prefix' => 'post'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/create', 'CreateController')->name('post.create');

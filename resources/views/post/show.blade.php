@@ -19,9 +19,11 @@
                     </div>
                     <div class="post-navigation wow fadeInUp">
                         <button class="btn prev-post"> Предыдущий пост </button>
-                            @if(auth() && auth()->user()->id == $post->id)
-                            <a class="btn" href="{{ route('post.edit', $post->id) }}"> Редактировать пост </a>
-                           @endif
+                            @auth()
+                                @if(auth()->user()->id == $post->id)
+                                <a class="btn" href="{{ route('post.edit', $post->id) }}"> Редактировать пост </a>
+                            @endif
+                            @endauth
                         <button class="btn next-post"> Следующий пост </button>
                     </div>
                     <div class="comment-section wow fadeInUp">
@@ -47,7 +49,7 @@
                         <h5 class="widget-title">Теги</h5>
                         <div class="widget-content">
                             @foreach($tags as $tag)
-                                <a href="#" class="post-tag">{{ $tag->title }}</a>
+                                <a href="{{ route('posts.tag', $tag->id) }}" class="post-tag">{{ $tag->title }}</a>
                             @endforeach
                         </div>
                     </div>
@@ -74,7 +76,7 @@
                         <div class="widget-content">
                             <ul class="category-list">
                                 @foreach($categories as $category)
-                                    <li><a href="#">{{ $category->title }}</a></li>
+                                    <li><a href="{{ route('posts.category', $category->id) }}">{{ $category->title }}</a></li>
                                 @endforeach
                             </ul>
                         </div>
