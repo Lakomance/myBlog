@@ -56,3 +56,7 @@ Route::group(['namespace' => '\App\Http\Controllers\Profile', 'prefix' => 'profi
     Route::get('/edit', 'EditController')->name('profile.edit');
     Route::post('/update', 'UpdateController')->name('profile.update');
 });
+
+Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
+   Route::get('/', 'IndexController')->name('admin.index');
+});
